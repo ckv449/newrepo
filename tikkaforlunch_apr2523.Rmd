@@ -7,7 +7,14 @@ output:
     df_print: paged
 ---
 
-```{r setup, eval=FALSE}
-## knitr::opts_chunk$set(echo = TRUE)
+```{r, eval=TRUE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(tidyverse)
+library(readxl)
+hockey <- read_csv("game_data.csv")
+hockey %>% 
+  select(home_team, away_team, home_score, away_score) %>%  
+  group_by(home_team, away_team, home_score, away_score) %>% 
+  summarize(.)
 ```
 
