@@ -18,5 +18,7 @@ hockey %>%
   summarize(.)
 hockey %>% 
   summarize(unique(away_team))
+hockey %>% 
+  summarize(unique(home_team))
 ```
 
