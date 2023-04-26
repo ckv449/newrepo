@@ -1,0 +1,22 @@
+---
+title: "Hockey Games TB vs. LV 2.2.23"
+author: "Kyle Vance"
+date: "2023-04-25"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r, eval=TRUE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(tidyverse)
+library(readxl)
+hockey <- read_csv("game_data.csv")
+hockey %>% 
+  select(home_team, away_team, home_score, away_score) %>%  
+  group_by(home_team, away_team, home_score, away_score) %>% 
+  summarize(.)
+hockey %>% 
+  summarize(unique(away_team))
+```
+
