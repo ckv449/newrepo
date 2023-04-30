@@ -20,5 +20,9 @@ hockey %>%
   summarize(unique(away_team))
 hockey %>% 
   summarize(unique(home_team))
+hockey %>% 
+  select(home_score, away_score, game_seconds) %>% 
+  filter(game_seconds == 3600) %>% 
+  distinct(.)
 ```
 
